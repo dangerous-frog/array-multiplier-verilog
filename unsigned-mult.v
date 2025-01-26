@@ -54,7 +54,7 @@ module array_multiplier #(
             // First we parse the one on the edge, cause it has a different b input
             full_adder fa(
                 .a(carry[i-1][0]), // Carry from previous row
-                .b(pp[WIDTH-1][i]), // Missing pp from above, x[][4] 
+		    .b(pp[i][WIDTH-1]), // Missing pp from above, x[][4] 
                 .cin(pp[i+1][WIDTH-2]), // x i+1, a max -1, cause max will go row lower
                 .sum(sum[i][0]), // First sum and carries in array
                 .cout(carry[i][0]) 
